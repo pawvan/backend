@@ -1,0 +1,172 @@
+Here are some **real-world practice questions** that are focused on Node.js file system operations, designed to challenge your understanding and skillset:
+
+---
+
+### **1. Build a Personal File Backup System**
+
+#### Problem:
+Create a Node.js script that takes a **source directory** and **destination directory** as input. The script should:
+- Copy all files from the source directory to the destination directory.
+- If a file already exists in the destination, it should append a timestamp to the file name to avoid overwriting it.
+- Ensure that directories are created if they do not exist in the destination.
+- Print a log of the files copied and the ones skipped (because they already exist).
+
+#### What you’ll learn:
+- Working with `fs.readdir()`, `fs.copyFile()`, `fs.mkdir()`, and `fs.rename()`.
+- Error handling and working with directories.
+- Managing file names and timestamps.
+
+---
+
+### **2. Create a Basic Logging System**
+
+#### Problem:
+Build a **simple logging system** in Node.js that:
+- Creates a log file in a specified directory.
+- Each time a log message is added, it should append the timestamp and the message to the log file.
+- The system should have different log levels (e.g., INFO, WARN, ERROR). Log levels should have different formats (e.g., INFO messages are just plain text, ERROR messages are highlighted with red).
+- Optionally, implement a **log rotation** feature, where the log file is archived and a new one is created after reaching a certain size (e.g., 1MB).
+
+#### What you’ll learn:
+- File writing with `fs.appendFile()`.
+- Date and time formatting.
+- Log rotation (archiving logs).
+- Handling large files efficiently.
+
+---
+
+### **3. Create a File Search Utility**
+
+#### Problem:
+Develop a file search utility that:
+- Searches for a specific **keyword** in all files within a given directory.
+- The script should return the file names and the specific line in which the keyword appears.
+- Make sure to support recursive search (i.e., searching through subdirectories).
+- Implement an option to limit the number of files or lines shown in the result.
+
+#### What you’ll learn:
+- File reading with `fs.readFile()`.
+- Working with regular expressions to find keywords in text files.
+- Recursively traversing directories with `fs.readdir()` and `fs.stat()`.
+- Command-line argument parsing.
+
+---
+
+### **4. Build a File Metadata Fetcher**
+
+#### Problem:
+Write a Node.js script that fetches metadata for all files in a given directory and outputs the information (e.g., file size, last modified date, etc.) in a tabular format.
+
+The metadata should include:
+- **File name**
+- **File size**
+- **Last modified date**
+- **Is it a directory or a file?**
+
+The program should output the metadata to a JSON file, where each entry corresponds to a file.
+
+#### What you’ll learn:
+- File information with `fs.stat()`.
+- File and directory traversal with `fs.readdir()`.
+- Formatting JSON data and output to a file.
+  
+---
+
+### **5. Implement a Simple File Watcher**
+
+#### Problem:
+Create a file watcher that:
+- Watches a given directory for changes (new file creation, file deletion, or file modification).
+- Whenever a change happens, the script should print the **type of change** (added, removed, or modified) and the name of the affected file.
+- Optionally, write these logs to a separate log file, so that you have a record of all changes.
+
+#### What you’ll learn:
+- File system event monitoring using `fs.watch()` or `chokidar` (a file watching package).
+- Handling file changes dynamically.
+- Writing logs to a file in real-time.
+
+---
+
+### **6. Implement a Simple Directory Synchronizer**
+
+#### Problem:
+Create a script that synchronizes two directories:
+- If a file exists in **Directory A** but not in **Directory B**, copy it over.
+- If a file is updated in **Directory A**, replace the one in **Directory B** with the updated file.
+- If a file exists in **Directory B** but not in **Directory A**, delete it from **Directory B**.
+- Make sure to support nested directories (recursively).
+- Provide a **dry-run** mode to preview changes before they are applied.
+
+#### What you’ll learn:
+- Directory traversal with `fs.readdir()` and `fs.stat()`.
+- Recursive operations with `fs.mkdir()` and `fs.copyFile()`.
+- Synchronization logic and managing conflicts between files.
+- Command-line argument handling.
+
+---
+
+### **7. Build a File Compression and Decompression Tool**
+
+#### Problem:
+Write a Node.js application that can compress and decompress files. You can use a compression library like **`zlib`** or **`archiver`** for the compression functionality.
+
+- The script should accept input for a file (or directory) to be compressed.
+- For decompression, it should accept a compressed file and decompress it to the original directory.
+
+Bonus: Implement a feature to show the **compression ratio** (the ratio of the compressed size to the original size).
+
+#### What you’ll learn:
+- Compression and decompression with the `zlib` module or third-party libraries.
+- Working with file streams (`fs.createReadStream()` and `fs.createWriteStream()`).
+- Error handling and file manipulation.
+
+---
+
+### **8. Build a Versioned File Storage System**
+
+#### Problem:
+Create a **version control system** for files where:
+- A user can upload a file, and the system will save the current version.
+- Each time a file is updated, the system should create a new version of that file (with a timestamp).
+- The system should allow the user to list all versions of a file and download any specific version.
+
+#### What you’ll learn:
+- Versioning with directories and file names.
+- Managing multiple versions of the same file using `fs.rename()` and `fs.copyFile()`.
+- Storing metadata about versions (e.g., timestamps, file hashes).
+
+---
+
+### **9. Build a CSV to JSON Converter**
+
+#### Problem:
+Write a utility that reads a **CSV file** and converts its content to **JSON** format.
+
+- The script should take the path of the CSV file as input.
+- Convert each row in the CSV to a JSON object, where the header row serves as the key for each corresponding column.
+- Output the result as a JSON file.
+
+#### What you’ll learn:
+- Reading CSV files with `fs.readFile()`.
+- Parsing CSV data into JavaScript objects.
+- Writing JSON files with `fs.writeFile()`.
+
+---
+
+### **10. Implement File Permissions Checker**
+
+#### Problem:
+Create a Node.js application that checks file permissions:
+- The script should take the file path as input and display the permissions (e.g., read, write, execute).
+- It should check if the current user has permission to read, write, or execute the file.
+- Optionally, the script should allow the user to change file permissions.
+
+#### What you’ll learn:
+- File permissions with `fs.stat()` and `fs.chmod()`.
+- Handling errors related to permission denial.
+- Working with the command line to interact with file permissions.
+
+---
+
+### **Summary**
+These **real-world file system problems** are designed to help you become proficient with the Node.js `fs` module. By solving these problems, you'll improve your understanding of file operations, error handling, and directory traversal, as well as learn to integrate more advanced features like logging, synchronization, and compression into your Node.js applications.
